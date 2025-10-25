@@ -1,0 +1,20 @@
+ class CivilEngineer : Engineer
+    {
+        public int Sites { get; set; }
+
+        public CivilEngineer(string name, double baseSalary,int birth, int sites)
+            : base(name, baseSalary,birth)
+        {
+            Sites = sites;
+        }
+        //حساب الراتب حيث عن كل اشراف مشروع له إضافة 800
+        public override double CalculateSalary()
+        {
+            return BaseSalary + Sites * 800;
+        }
+
+        public override void GenerateReport()
+        {
+            Console.WriteLine("Report {0} supervises {1} construction sites.",Name,Sites);
+        }
+    }
