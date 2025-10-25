@@ -1,0 +1,38 @@
+  class SoftwareEngineer : Engineer
+    {
+        private string skills;
+        private int numProject;
+        public string Skills
+        {
+            get
+            {
+                return skills;
+            }
+            set { skills = value; }
+        }
+        public int NumProject
+        {
+            get
+            {
+                return numProject;
+            }
+            set { numProject = value; }
+        }
+        public SoftwareEngineer(string name, double baseSalary,int birthyear, int projects,string skills)
+        : base(name, baseSalary,birthyear)
+        {
+            numProject = projects;
+            this.skills = skills;
+        }
+        //حساب الراتب حيث عن كل مشروع له إضافة 500
+        public override double CalculateSalary()
+        {
+            return BaseSalary + (numProject*500);
+        }
+
+        public override void GenerateReport()
+        {
+            Console.WriteLine("Report {0} completed {1} software projects.",Name,numProject);
+        }
+
+    }
